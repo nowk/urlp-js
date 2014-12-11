@@ -25,7 +25,7 @@ module.exports = match;
  *
  * @param {String} pattern
  * @param {String} path
- * @return {Match|Boolean} false if no match
+ * @return {Match}
  * @api public
  */
 
