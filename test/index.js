@@ -37,4 +37,12 @@ describe("urlp", function() {
       assert.deepEqual(m.params, v[2]);
     });
   });
+
+  it("supports simple wildcard *", function() {
+    let pat = "/posts/:post_id/comments/*";
+
+    let m = match(pat, "/posts/123/comments/456");
+    assert.isTrue(m.match);
+    assert.deepEqual(m.params, {post_id: "123"})
+  });
 });

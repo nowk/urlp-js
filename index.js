@@ -52,6 +52,9 @@ function match(pattern, path) {
 
     let p = pattern[x];
 
+    if (p === "*") {
+      break;
+    }
     if (p === ":") {
       let k = dir(pattern.substr(x));
       let v = dir(path.substr(y));
