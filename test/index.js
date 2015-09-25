@@ -41,8 +41,15 @@ describe("urlp", function() {
   it("supports simple wildcard *", function() {
     let pat = "/posts/:post_id/comments/*";
 
-    let m = match(pat, "/posts/123/comments/456");
-    assert.isTrue(m.match);
-    assert.deepEqual(m.params, {post_id: "123"})
+    var cases = [
+      ["/posts/123/comments", {post_id: "123"}],
+      ["/posts/123/comments/456", {post_id: "123"}]
+    ];
+
+    for (var i = 0, n = cases.length; i < n; i++) {
+      let m = match(pat, cases[i][0]);
+      assert.isTrue(m.match);
+      assert.deepEqual(m.params, cases[i][1]);
+    }
   });
 });

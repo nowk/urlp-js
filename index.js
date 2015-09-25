@@ -47,6 +47,12 @@ function match(pattern, path) {
     }
 
     if (x > n_1 || y > m_1) {
+      // look forward a spot for the wildcard this will help paths like
+      // /posts/:id/comments/* vs. /posts/123/comments
+      if (pattern[x+1] === "*") {
+        break;
+      }
+
       return new Match(false);
     }
 
