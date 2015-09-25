@@ -1,6 +1,6 @@
 {
   "name": "urlp-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "url pattern matcher",
   "main": "index.js",
   "directories": {
