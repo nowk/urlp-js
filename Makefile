@@ -1,6 +1,6 @@
 
 build-docker:
-	docker build --rm -t urlp-js-env .
+	docker build --rm -t urlp-js/devs .
 
 npm-install:
 	./docker-run npm install
